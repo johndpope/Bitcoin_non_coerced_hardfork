@@ -61,14 +61,12 @@ At its inception, the pool of transactions to be mined on the new chain will all
 
 # Node behaviour
 
-New chain nodes should have read and write capability for peers that continue to want to transact on old chain consensus rules. Transactions should be coded to be backwards compatible with any existing format, and yet extend the functionality to cater for new chain requirements.
+New chain nodes should have read and write capability for peers that continue to want to transact on old chain consensus rules. Transactions should be coded to be backwards compatible with any existing format, and yet extend the functionality to cater for new chain requirements.  The transaction and integration of the node client should allow for the integration of both transaction formats, enabling the user to migrate to the new chain if signed appropriately.  It should also allow for the user to use entirely old node infrastructure without ever being exposed to the new chain, while ensuring that there isn't any rapid decrease in security by either abandoning existing mining infrastructure, nor existing mining infrastructure abandoning them.  
 
 
 # Miscellaneous
 
 The other thing that could be done would be to increase the decimal count in the new chain. As Luke Dashjr was kind enough to explain to me once, it is actually the satoshi that is the base level of bitcoin. The bitcoin determination of eight decimal places is arbitrary. But with the new chain, it would be possible to nominate the arbitrary count as 16 decimal places, and the transfer of value from the old chain could be redeemed in the new chain as (10^8) satoshis.  This provides an even greater granularity than is currently possible.  Given enough thought on any new mining algorithm, this could have quite positive ramifications with regard to scalability.  But that is not the scope of this proposal.
-
-The transaction and integration of the node client should allow for the integration of both transaction formats, enabling the user to migrate to the new chain.  It should also allow for the user to use entirely old node infrastructure without ever being exposed to the new chain, while ensuring that there isn't any rapid decrease in security by either abandoning existing mining infrastructure, nor existing mining infrastructure abandoning them.  
 
 
 # Discussion
