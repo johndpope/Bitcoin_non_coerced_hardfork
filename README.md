@@ -78,8 +78,6 @@ The primary concern for any consensus rule change, the risk of the disenfranchis
 This also does not disenfranchise existing bitcoin holders, nor does it disenfranchise existing miners.
 
 
-# Discussion
-
 # References :
 
 [1]  https://www.reddit.com/r/Bitcoin/comments/6u30sc/block_494784_segwit2x_developers_set_date_for/dlqfe00/
