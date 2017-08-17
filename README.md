@@ -1,4 +1,4 @@
-# Bitcoin Non-Coerced Hardfork
+# Bitcoin Non-Coerced Hard-fork
 
 With the, what seems, constant attacks on bitcoin in the past year attempting to co-opt the consensus rules of bitcoin, I've thought many times of whether it is possible to safely hard-fork.  Given the choice between an attacking miner and forking away to a safer set of consensus rules, I don't believe that this would present too much of an issue.  However, the implementation of Segregated Witness (i.e. SegWit), when the consensus changes were overwhelmingly supported, were still contentious, and there was a concerted social media compaign to undermine the bitcoin core open source development group.
 
