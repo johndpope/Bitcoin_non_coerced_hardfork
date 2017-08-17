@@ -18,7 +18,22 @@ Added onto that is the issue of mining infrastructure.  Whether miners are malic
 
 # The Proposal : Dual-Locked chains.
 
+In a discussion on reddit with jonny1000 about the feasibilty of implementing a dual-locking chain mechanism, it would seem to be broadly possible.  The proposal is this :
+
+Definitions : Old Chain = The existing bitcoin blockchain.
+              New Chain = A consensus rule incompatible blockchain.
+
+A consensus rule change hard-fork (The New Chain) is created and populated with locked coins that may only be unlocked utilizing the private keys of the Old Chain.  The key to unlock the coins on the new chain must be the result of a scripted output of an X block-depth (100?) lock transaction script.  The output of this script becomes the key that unlocks value on the the new chain.
 
 
 # Mining Rewards
+
+
+
+
+# References :
+
+[1]  https://www.reddit.com/r/Bitcoin/comments/6u30sc/block_494784_segwit2x_developers_set_date_for/dlqfe00/
+     Discusison with https://www.reddit.com/user/jonny1000 about dual-locking chain feasibility.
+
 
