@@ -28,7 +28,15 @@ A consensus rule change hard-fork (The New Chain) is created and populated with 
 
 # Mining Rewards
 
+The issue for the enablement of the new chain is the issue of block rewards, and how you bootstrap the mining environment.  It is also critically important to recognize the effect of a split chain will have the bitcoin supply.  By establishing a new chain, you are in effect doubling the reward schedule for miners.  
 
+The proposal is to have block rewards calculated as a function of the percentage of bitcoin that has been migrated to the new chain.  Because each node and each miner will have knowledge of the transactions that lead to bitcoin migration, the block reward that is awarded the miner is increased accordingly, and the transaction is added to the new blockchain.
+
+  Example :
+  
+    12.5 old chain block reward * 1.567% = 1.9875 btc reward.
+    
+This will allow the transaction pool being maintained by the miners
 
 
 # References :
