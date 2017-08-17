@@ -19,7 +19,7 @@ It is my belief that any hard-fork in bitcoin that doesn't have 100% acceptance 
 
 There are many users in bitcoin that continue to use very old node reference clients.  It should always be of great concern if even 1% of the users of bitcoin don't agree with any conensus change if it disenfranchises them from the safety and security of the social contract they believe they have with the maintainers of the environment, by removing the infrastructure that is necessary for them to continue using their node.  There are many people that are not concerned with block sizes, nor transaction fees, nor even mining centralization.
 
-Added onto that is the issue of mining infrastructure.  Whether miners are malicious or not, it has to be recognized that any attempt to change the mining hashing algorithm will be met with great resistance, and deservedly so.  Even if a change of this nature was arguably justifiable as a result of a 51% attack by a large miner or group of miners, the non-attacking miners will be negatively affected in the same way as the attacking mining interest is.  This is a long-term untenable position for both miners, and for the maintainers of the consensus rules.  It should also be recognized the amount of resources that have been invested into that part of bitcoin security.  They must be protected from disenfranchisement as well.
+Added onto that is the issue of mining infrastructure.  Whether miners are malicious or not, it has to be recognized that any attempt to change the mining hashing algorithm will be met with great resistance, and deservedly so.  Even if a change of this nature was arguably justifiable as a result of a 51% attack by a large miner or group of miners, the non-attacking miners will be negatively affected in the same way as the attacking mining interest is.  This is a long-term untenable position for both miners, and for the maintainers of the consensus rules.  It should also be recognized the amount of resources that have been invested in the integral part of bitcoin security that is mining.  They must be protected from disenfranchisement as well.
 
 
 # The Proposal : Dual-Locked chains.
@@ -39,7 +39,7 @@ The transaction to migrate to the new chain is the transaction output of the old
 
 # Mining rewards and coin supply
 
-The issue for the enablement of the new chain is the issue of block rewards, and how one can bootstrap the mining environment.  It is also critically important to recognize the effect of a split chain will have the bitcoin supply.  By establishing a new chain, you are in effect doubling the reward schedule for miners.  
+The issue for the enablement of the new chain is the issue of block rewards, and how one can bootstrap the mining environment.  It is also critically important to recognize the effect that a split chain will have on the total bitcoin coin supply.  By establishing a new chain, you are in effect doubling the reward schedule for miners.  
 
 The proposal is to have block rewards calculated as a function of the percentage of bitcoin that has been migrated to the new chain.  Because each node and each miner will have knowledge of the transactions that lead to bitcoin migration, the block reward that is awarded the miner is increased accordingly, and the transaction is added to the new blockchain.
 
@@ -54,14 +54,14 @@ The other schedule to introduce is the transfer value between the chains.  Becau
     
 The first block of coins being migrated will have the value returned to the holder in the new chain at 100% of the coin count of the coins for migration, because no block in the new chain has been created, and the block counts align.
 
-The coin supply situation is therefore resolved in the new chain, because while the schedule of coin creation on the new chain will always be lower than the coin creation on the old chain, the migration is gradually lowering the amount of coins awarded in the new chain during migration.  It puts the ceiling on the total number of coins created in the new chain, which is < the previous chain. Each chain aligns on a value that is a reflection of the ratio between the old chain and the new chain.  If the new chain maintains the same block creation schedule on the new chain, it becomes a choice which chain you use, one or the other, not about having value on both chains. Because of the lock on the old chain, gradually the old chain would have less and less value available to it as value is transferred to the new one.  But the value of each coin should be maintained, and aligned with the new coin.
+The coin supply situation is therefore resolved in the new chain, because while the schedule of coin creation on the new chain will always be lower than the coin creation on the old chain, the migration is gradually lowering the amount of coins awarded in the new chain during migration.  It puts the ceiling on the total number of coins created in the new chain, which is < the previous chain. Each chain aligns on a value that is a reflection of the ratio between the old chain and the new chain.  If the new chain maintains the same block creation schedule on the old chain, it becomes a choice which chain you use, one or the other, not about having value on both chains. Because of the lock on the old chain, gradually the old chain would have less and less value available to it as that value is transferred to the new one.  But the value of each coin on the old chain should be maintained, and aligned with the new coin.
 
-This will allow the transaction pool being maintained by the nodes to act as a futures market to miners on the new chain.  It will also incentivize miners mining blocks that are formed from the migration between chains, because each of these transactions will lead to an increase of the block reward.  Very large transactions from the old chain to the new chain will lead to very large block rewards.
+At its inception, the pool of transactions to be mined on the new chain will allow the transaction pool being maintained by the nodes to act as a futures market to miners on the new chain.  It will also incentivize miners mining blocks that are formed from the migration between chains, because each of these transactions will lead to an increase of the block reward.  Very large transactions from the old chain to the new chain will lead to very large block rewards.
 
 
 # Miscellaneous
 
-The other thing you could do would be to increase the decimal count in the new chain. As Luke Dashjr was kind enough to explain to me once, it is actually the satoshi that is the base level of bitcoin. The bitcoin determination of eight decimal places is arbitrary. But with the new chain, it would be possible to nominate the arbitrary count as 16 decimal places, and the transfer of value from the old chain could be redeemed in the new chain as 1x108 satoshis.  This provides an even greater granularity than is currently possible.  Given enough thought on any new mining algorithm, this could have quite positive ramifications with regard to scalability.
+The other thing that could be done would be to increase the decimal count in the new chain. As Luke Dashjr was kind enough to explain to me once, it is actually the satoshi that is the base level of bitcoin. The bitcoin determination of eight decimal places is arbitrary. But with the new chain, it would be possible to nominate the arbitrary count as 16 decimal places, and the transfer of value from the old chain could be redeemed in the new chain as (10^8) satoshis.  This provides an even greater granularity than is currently possible.  Given enough thought on any new mining algorithm, this could have quite positive ramifications with regard to scalability.  But that is not the scope of this proposal.
 
 The transaction and integration of the node client should allow for the integration of both transaction formats, enabling the user to migrate to the new chain.  It should also allow for the user to use entirely old node infrastructure without ever being exposed to the new chain, while ensuring that there isn't any rapid decrease in security by either abandoning existing mining infrastructure, nor existing mining infrastructure abandoning them.  
 
@@ -69,6 +69,8 @@ The transaction and integration of the node client should allow for the integrat
 # Discussion
 
 It must be studied what possible price effect might be generated on the new chain in the first blocks being created and migrated.
+
+The mining algorithm might effect how blockchains are tied?
 
 
 # Conclusion
