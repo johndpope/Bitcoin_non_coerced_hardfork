@@ -59,6 +59,11 @@ The coin supply situation is therefore resolved in the new chain, because while 
 At its inception, the pool of transactions to be mined on the new chain will allow the transaction pool being maintained by the nodes to act as a futures market to miners on the new chain.  It will also incentivize miners mining blocks that are formed from the migration between chains, because each of these transactions will lead to an increase of the block reward.  Very large transactions from the old chain to the new chain will lead to very large block rewards.
 
 
+# Node behaviour
+
+New chain nodes should have read and write capability for peers that continue to want to transact on old chain consensus rules. Transactions should be coded to be backwards compatible with any existing format, and yet extend the functionality to cater for new chain requirements.
+
+
 # Miscellaneous
 
 The other thing that could be done would be to increase the decimal count in the new chain. As Luke Dashjr was kind enough to explain to me once, it is actually the satoshi that is the base level of bitcoin. The bitcoin determination of eight decimal places is arbitrary. But with the new chain, it would be possible to nominate the arbitrary count as 16 decimal places, and the transfer of value from the old chain could be redeemed in the new chain as (10^8) satoshis.  This provides an even greater granularity than is currently possible.  Given enough thought on any new mining algorithm, this could have quite positive ramifications with regard to scalability.  But that is not the scope of this proposal.
