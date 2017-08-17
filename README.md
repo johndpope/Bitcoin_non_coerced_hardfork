@@ -68,7 +68,7 @@ The transaction and integration of the node client should allow for the integrat
 
 # Discussion
 
-It must be studied what possible price effect might be generated on the new chain in the first blocks being created and migrated.
+It must be studied what possible price effect might be generated on the new chain in the first blocks being migrated.
 
 The mining algorithm might effect how blockchains are tied?
 
