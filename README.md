@@ -61,10 +61,15 @@ This will allow the transaction pool being maintained by the nodes to act as a f
 
 # Miscellaneous
 
-
 The other thing you could do would be to increase the decimal count in the new chain. As Luke Dashjr was kind enough to explain to me once, it is actually the satoshi that is the base level of bitcoin. The bitcoin determination of eight decimal places is arbitrary. But with the new chain, it would be possible to nominate the arbitrary count as 16 decimal places, and the transfer of value from the old chain could be redeemed in the new chain as 1x108 satoshis.  This provides an even greater granularity than is currently possible.  Given enough thought on any new mining algorithm, this could have quite positive ramifications with regard to scalability.
 
 The transaction and integration of the node client should allow for the integration of both transaction formats, enabling the user to migrate to the new chain.  It should also allow for the user to use entirely old node infrastructure without ever being exposed to the new chain, while ensuring that there isn't any rapid decrease in security by either abandoning existing mining infrastructure, nor existing mining infrastructure abandoning them.  
+
+
+# Discussion
+
+It must be studied what possible price effect might be generated on the new chain in the first blocks being created and migrated.
+
 
 # Conclusion
 
@@ -72,6 +77,8 @@ The primary concern for any consensus rule change, the risk of the disenfranchis
 
 This also does not disenfranchise existing bitcoin holders, nor does it disenfranchise existing miners.
 
+
+# Discussion
 
 # References :
 
