@@ -14,20 +14,22 @@ It is my belief that any hard-fork in bitcoin that doesn't have 100% acceptance 
 
 There are many users in bitcoin that continue to use very old node reference clients.  It should always be of great concern if even 1% of the users of bitcoin don't agree with any conensus change if it disenfranchises them the safety and security of the social contract they believe they have with the maintainers of the environment, by removing the infrastructure that is necessary for them to continue using their node.  There are many people that are not concerned with block sizes, nor transaction fees, nor even mining centralization.
 
-Added onto that is the issue of mining infrastructure.  Whether miners are malicious or not, it has to be recognized that any attempt to change the mining hashing algorithm will be met with great resistance, and deservedly so.  Even if a change of this nature was arguably justifiable as a result of a 51% attack by a large miner or group of miners, the non-attacking miners will be negatively affected in the same way as the attacking mining interest is.  This is a long-term untenable position for both miners, and for the maintainers of the consensus rules.
+Added onto that is the issue of mining infrastructure.  Whether miners are malicious or not, it has to be recognized that any attempt to change the mining hashing algorithm will be met with great resistance, and deservedly so.  Even if a change of this nature was arguably justifiable as a result of a 51% attack by a large miner or group of miners, the non-attacking miners will be negatively affected in the same way as the attacking mining interest is.  This is a long-term untenable position for both miners, and for the maintainers of the consensus rules.  It should also be recognized the amount of resources that have been invested into that part of bitcoin security.  They must be protected from disenfranchisement as well.
 
 
 # The Proposal : Dual-Locked chains.
 
 In a discussion on reddit with jonny1000 about the feasibilty of implementing a dual-locking chain mechanism, it would seem to be broadly possible.  The proposal is this :
 
-Definitions : Old Chain = The pre-fork bitcoin blockchain.
+Definitions : 
+
+              Old Chain = The pre-fork bitcoin blockchain.
 
               New Chain = A post-fork blockchain.
 
 A consensus rule change hard-fork (the new chain) is created and populated with locked coins that may only be unlocked utilizing the private keys of the chain prior the fork (the old chain).  The key to unlock the coins on the new chain must be the result of a scripted output of an X block-depth (100?) lock transaction script.  The output of this script becomes the key that unlocks value on the the new chain.  The new chain is locked, with coins available to anyone that is prepared to unlock them using the private keys sourced from in the old chain. So the same as a regular hard-fork. But the unlocking process on the new chain requires a transaction on the old chain detailing how the coins at that address have been spent on the old chain and are no longer redeemable.
 
-The transaction to migrate to the new chain is the output of the old chain.  It is placed into the transaction pool of the nodes of the new chain.  As the transaction pool increases with more transactions, the value behind that increases.  The incentive to mine this chain is explained below in mining rewards.  
+The transaction to migrate to the new chain is the transaction output of the old chain proving that the coins have been permanently locked.  It is placed into the transaction pool of the nodes of the new chain.  As the transaction pool increases with more transactions, the value behind that increases.  The incentive to mine this chain is explained below in mining rewards.  
 
 
 # Mining rewards and coin supply
