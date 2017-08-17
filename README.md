@@ -42,11 +42,14 @@ The proposal is to have block rewards calculated as a function of the percentage
   
     12.5 old chain block reward * 1.567% = 1.9875 btc reward.
 
-The other schedule to introduce is the transfer value between the chains.  Because the old chain is still going up in rewards, the migration value for each transaction should be a function of the amount of coins that have been transferred and the amount of coins that exist in the new chain.  At first block of coins being migrated the value returned to the holder in the new chain is 100% of the coin count of the migration count.  If the new chain has 25% of the coin count of the old chain already committed, the amount of coins offered in the new chain is 75% of the coins being migrated from the old chain.
+The other schedule to introduce is the transfer value between the chains.  Because the old chain is still going up in rewards at the bitcoin release schedule, the migration amount of coins received for each transaction should be a reflection of the difference between the coin release schedules.  As more coins are available in the old chain by design, the ratio of coins redeemed in the new chain should be lower.  This can be done by multiplying the coins to be migrated by the ratio of the total number of coins in the new chain and the number of coins in the old chain.
 
-(Hmm... I think I have to think about that a bit more.  That is not quite right.)
+  Example :
+    100 coins to transfer * (17M in the new chain / 20M in the old chain) = 85 coins in the new chain.
+    
+At first block of coins being migrated the value returned to the holder in the new chain is 100% of the coin count of the migration count, because no block in the new chain has been created, and the block counts align.
 
-The coin supply situation is therefore resolved in the new chain, because while the schedule of coin creation on the new chain will always be lower than the coin creation on the old chain, the migration is gradually lowering the amount of coins awarded in the new chain during migration.  It puts the ceiling on the total number of coins created in the new chain, which is < the previous chain. Each chain aligns on a value that is a reflection of the   If the new chain maintains the same block creation schedule on the new chain, it becomes a choice which chain you use, one or the other, not about having value on both chains. Because of the lock on the old chain, gradually the old chain would have less and less value available to it as value is transferred to the new one. 
+The coin supply situation is therefore resolved in the new chain, because while the schedule of coin creation on the new chain will always be lower than the coin creation on the old chain, the migration is gradually lowering the amount of coins awarded in the new chain during migration.  It puts the ceiling on the total number of coins created in the new chain, which is < the previous chain. Each chain aligns on a value that is a reflection of the ratio between the old chain and the new chain.  If the new chain maintains the same block creation schedule on the new chain, it becomes a choice which chain you use, one or the other, not about having value on both chains. Because of the lock on the old chain, gradually the old chain would have less and less value available to it as value is transferred to the new one. 
 
 This will allow the transaction pool being maintained by the nodes to act as a futures market to miners.  It will also incentivize miners mining blocks that are formed from the migration between chains, because each of these transactions will lead to an increase of the block reward.
 
@@ -56,10 +59,11 @@ This will allow the transaction pool being maintained by the nodes to act as a f
 
 The other thing you could do would be to increase the decimal count in the new chain. As Luke Dashrj was kind enough to explain to me once, it is actually the satoshi that is the base level of bitcoin. The bitcoin determination of eight decimal places is arbitrary. But with the new chain, it would be possibl to nominate the arbitrary count as 16 decimal places, and the transfer of value from the old chain could be redeemed in the new chain as 1x108 satoshis.  This provides an even greater granularity than is currently possible.  Given enough thought on any new mining algorithm, this could have quite positive ramifications with regard to scalability.
 
+The transaction and integration of the node client should allow for the integration of both transaction formats, enabling the user to migrate to the new chain.  It should also allow for the user to use entirely old node infrastructure without ever being exposed to the new chain, while ensuring that there isn't any rapid decrease in security by either abandoning existing mining infrastructure, nor existing mining infrastructure abandoning them.  
 
 # Conclusion
 
-The primary concern for any consensus rule change, the risk of the disenfranchising the users that do not want to adopt a consensus change.  This proposal should allow new mining algorithms to be introduced into a bitcoin blockchain, and for 
+The primary concern for any consensus rule change, the risk of the disenfranchising the users that do not want to adopt a consensus change.  This proposal should allow new mining algorithms to be introduced into a bitcoin blockchain, and even provides a framework for multiple mining algorithms.
 
 
 # References :
