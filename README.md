@@ -96,7 +96,7 @@ Given the the greater granularity in the new chain, it might be possible to use 
 
 # Conclusion
 
-The primary concern for any consensus rule change, the risk of the disenfranchising the users that do not want to adopt a consensus change.  This proposal should allow new mining algorithms to be introduced into a bitcoin blockchain, and even provides a framework for multiple mining algorithms.
+The primary concern for any consensus rule change is alleviating the risk of the disenfranchising the users that do not want to adopt a consensus change.  This proposal should allow new mining algorithms to be introduced into a bitcoin blockchain, and even provides a framework for multiple mining algorithms.
 
 This also does not disenfranchise existing bitcoin holders, nor does it disenfranchise existing miners.
 
