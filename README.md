@@ -39,9 +39,11 @@ Definitions :
 
 A consensus rule change hard-fork (the new chain) is created and populated with locked coins that may only be unlocked utilizing the private keys of the chain prior the fork (the old chain).  So the same as a regular hard-fork.  This proposal, however, generates this key to unlock the coins on the new chain as a function that is the result of a scripted output of an X block-depth (100?) lock transaction script.  The output of this script becomes the key that unlocks value on the the new chain.  The new chain is populated by the UTXO set (or entire blockchain but is it necessary?) but locked, with coins available to anyone that is prepared to unlock them using the private keys sourced from in the old chain. But the unlocking process on the new chain requires a transaction on the old chain detailing how the coins at that address have been spent on the old chain and are no longer redeemable.
 
-The transaction to migrate to the new chain is the transaction output of the old chain proving that the coins have been  shopermanently locked.  It is placed into the transaction pool of the nodes of the new chain.  As the transaction pool increases with more transactions, the value behind that increases.  The incentive to mine this chain is explained below in mining rewards.  
+The transaction to migrate to the new chain is the transaction output of the old chain proving that the coins have been  permanently locked.  It is placed into the transaction pool of the nodes of the new chain.  As the transaction pool increases with more transactions, the value behind that increases, incentivizing mining activity on the new chain.
 
-The other proposal would be modify the base unit of bitcoin to be 10^8 units for each existing satoshit.  For each unit in the old chain, new coins are available in the new chain to the tune of 10^8 multipled by a coin-count comparison between the old and the new chains.  It is explained in more detail below.
+The proposal is to modify the base unit of bitcoin to be 10^8 units for each existing satoshit.  For each unit in the old chain, new coins are available in the new chain to the tune of 10^8 multipled by a coin-count comparison between the old and the new chains.  It is explained in more detail the mining rewards and coin supply section.
+
+Lastly, there should be some investigation about a provably cryptographic method of transferring value between the old chain and the new chain such that the address-space in the new chain is unlinked with the old chain.
 
 
 # Mining rewards and coin supply
@@ -63,17 +65,21 @@ The first block of coins being migrated will have the value returned to the hold
 
 The coin supply situation is therefore resolved in the new chain, because while the schedule of coin creation on the new chain will always be lower than the coin creation on the old chain, the migration is gradually lowering the amount of coins awarded in the new chain during migration.  It puts the ceiling on the total number of coins created in the new chain, which is < the previous chain. Each chain aligns on a value that is a reflection of the ratio between the old chain and the new chain.  If the new chain maintains the same block creation schedule on the old chain, it becomes a choice which chain you use, one or the other, not about having value on both chains. Because of the lock on the old chain, gradually the old chain would have less and less value available to it as that value is transferred to the new one.  But the value of each coin on the old chain should be maintained, and aligned with the new coin.
 
-At its inception, the pool of transactions to be mined on the new chain will allow the transaction pool being maintained by the nodes to act as a futures market to miners on the new chain.  It will also incentivize miners mining blocks that are formed from the migration between chains, because each of these transactions will lead to an increase of the block reward.  Very large transactions from the old chain to the new chain will lead to very large block rewards.
+At its inception, the pool of transactions to be mined on the new chain will allow the transaction pool being maintained by the nodes to act as a futures market to miners on the new chain.  It will also incentivize miners mining blocks that are formed from the migration between chains, because each of these transactions will lead to an increase of the block reward.  Very large transactions from the old chain to the new chain will lead to very large block rewards.  
+
+It must be tested to determine what the most appropriate difficulty reset schedule given the staged migration.  The implementation of this schedule is not the scope of this proposal.
 
 
 # Node behaviour
+
+The memory pool for each chains would be maintained with by the new nodes, but old nodes would only manage the transactions that apply to the old chain.  As more value is migrated to the new chain, with the expectation of greater utility, the incentive will be to migrate coins to the new chain.  But because the values are tied on a set release and reward schedule, the values of the two chains should align.
 
 New chain nodes should have read and write capability for peers that continue to want to transact on old chain consensus rules. Transactions should be coded to be backwards compatible with any existing format, and yet extend the functionality to cater for new chain requirements.  The transaction and integration of the node client should allow for the integration of both transaction formats, enabling the user to migrate to the new chain if signed appropriately.  It should also allow for the user to use entirely old node infrastructure without ever being exposed to the new chain, while ensuring that there isn't any rapid decrease in security by either abandoning existing mining infrastructure, nor existing mining infrastructure abandoning them.  
 
 
 # Miscellaneous
 
-The other thing that should be done, to cater for the coin transferrance multiplication factors, would be to increase the decimal count in the new chain. As Luke Dashjr was kind enough to explain to me once, it is actually the satoshi that is the base level of bitcoin. The bitcoin determination of eight decimal places is arbitrary. But with the new chain, it would be possible to nominate the arbitrary count as 16 decimal places, and the transfer of value from the old chain could be redeemed in the new chain as (10^8) satoshis.  This provides an even greater granularity than is currently possible.  Given enough thought on any new mining algorithm, this could have other positive ramifications with regard to scalability.  But that is not the scope of this proposal.
+To cater for the coin transferrance multiplication factors, an increase the decimal count in the new chain will alleviate issues with the application of these ratios. As Luke Dashjr was kind enough to explain to me once, it is actually the satoshi that is the base level of bitcoin. The bitcoin determination of eight decimal places is arbitrary. But with the new chain, it would be possible to nominate the arbitrary count as 16 decimal places, maintaining the bitcoin moniker, but for it to represented as 10^16 in the new chain.  The transfer of value from the old chain should be redeemed in the new chain as (10^8) satoshis.  This provides an even greater granularity than is currently possible.  Given enough thought on any new mining algorithm, this could have other positive ramifications with regard to scalability.  But that is not the scope of this proposal.
 
 
 # Discussion
@@ -81,6 +87,8 @@ The other thing that should be done, to cater for the coin transferrance multipl
 It must be studied what possible price effect might be generated on the new chain in the first blocks being migrated.
 
 The mining algorithm might effect how blockchains are tied?
+
+Given the the greater granularity in the new chain, it might be possible to use the increased transaction address space to develop an algorithm that will be able to use the deterministic public and private key allocation to store encrypted information in the deterministic space.
 
 
 # Conclusion
