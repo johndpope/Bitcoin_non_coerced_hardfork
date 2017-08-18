@@ -1,14 +1,19 @@
+
+
+
 This is a work in progress, spelling errors, grammar and all that.  
 
 
 
 # A proposal for a bitcoin non-coerced hard-fork (NCHF)
 
-With the, what seems, constant attacks on bitcoin in the past year attempting to co-opt the consensus rules, and adopt changes that lead to centralization concerns, I've thought many times of whether it is possible to safely hard-fork.  Given the choice between an attacking miner, and forking away to a safer set of consensus rules, I don't believe that this would present too much of an issue.  However, the implementation of Segregated Witness (i.e. SegWit), when the consensus changes were overwhelmingly supported, were still contentious, and there was a concerted social media compaign to undermine the bitcoin core open source development group.
+With the, what seems, constant attacks on bitcoin in the past year attempting to co-opt the consensus rules, and adopt changes that lead to centralization, I've thought many times of whether it is possible to safely hard-fork at all.  Given the choice between an attacking miner, and forking away to a safer set of consensus rules, I don't believe that this would present too much of an issue.  However, the implementation of Segregated Witness (i.e. SegWit) showed us that even when the consensus changes were overwhelmingly supported by the users of bitcoin, they were still contentious, and there was a concerted social media compaign to undermine the bitcoin core open source development group.
 
 There have been many discussions and suggestions that core has agreed that there should need to be some hard-fork required at some point in the future to address scalability issues.  Given the adversarial nature of bitcoin and consensus, I can't see how 100% of the current nodes of bitcoin could ever migrate from one set of consensus rules to another.  This is not to be confused with a soft-fork, where existing users may still continue using their node client.  True, there are some safety issues with continuing to use older node client software, but there are other ways that these safety concerns can be alleviated.  
 
-I'd like to start a dialogue on how this might be achieved, with a suggestion on how it might be implemented without forcing existing bitcoin users to migrate to a different set of consensus rules, but still allow node users that are interested in expanding the protocol to meet new use-cases, to safely do so.  Following is what I think might be the beginning of a framework that might allow bitcoin to be migrated to a different set of consensus rules, like the adoption of an alternate hashing algorithm, without disenfranchising any of the existing bitcoin users. 
+Of paramount importance is the protection of existing node owners from the loss of funds as a result of a consensus change.  Node owners should not require to upgrade their node for years at a time, or even at all.
+
+I'd like to start a dialogue on how non-coerced hard-fork might be achieved, with a suggestion on how it might be implemented without forcing existing bitcoin users to migrate to a different set of consensus rules, but still allow node users that are interested in expanding the protocol to meet new use-cases, to safely do so.  Following is what I think might be the beginning of a framework that might allow bitcoin to be migrated to a different set of consensus rules, like the adoption of an alternate hashing algorithm, without disenfranchising any of the existing bitcoin users. I would also suggest that the proposed solution may be a way to incrementally implement mining algorithm changes that don't needlessly punish miners for the perception of a risk of centralization.
 
 If I'm completely mistaken, I'll be the first to admit it, and I have broad shoulders, so have at it!
 
@@ -32,9 +37,11 @@ Definitions :
 
               New Chain = A post-fork blockchain.
 
-A consensus rule change hard-fork (the new chain) is created and populated with locked coins that may only be unlocked utilizing the private keys of the chain prior the fork (the old chain).  The key to unlock the coins on the new chain must be the result of a scripted output of an X block-depth (100?) lock transaction script.  The output of this script becomes the key that unlocks value on the the new chain.  The new chain is populated by the UTXO set (or entire blockchain but is it necessary?) but locked, with coins available to anyone that is prepared to unlock them using the private keys sourced from in the old chain. So the same as a regular hard-fork. But the unlocking process on the new chain requires a transaction on the old chain detailing how the coins at that address have been spent on the old chain and are no longer redeemable.
+A consensus rule change hard-fork (the new chain) is created and populated with locked coins that may only be unlocked utilizing the private keys of the chain prior the fork (the old chain).  So the same as a regular hard-fork.  This proposal, however, generates this key to unlock the coins on the new chain as a function that is the result of a scripted output of an X block-depth (100?) lock transaction script.  The output of this script becomes the key that unlocks value on the the new chain.  The new chain is populated by the UTXO set (or entire blockchain but is it necessary?) but locked, with coins available to anyone that is prepared to unlock them using the private keys sourced from in the old chain. But the unlocking process on the new chain requires a transaction on the old chain detailing how the coins at that address have been spent on the old chain and are no longer redeemable.
 
-The transaction to migrate to the new chain is the transaction output of the old chain proving that the coins have been permanently locked.  It is placed into the transaction pool of the nodes of the new chain.  As the transaction pool increases with more transactions, the value behind that increases.  The incentive to mine this chain is explained below in mining rewards.  
+The transaction to migrate to the new chain is the transaction output of the old chain proving that the coins have been  shopermanently locked.  It is placed into the transaction pool of the nodes of the new chain.  As the transaction pool increases with more transactions, the value behind that increases.  The incentive to mine this chain is explained below in mining rewards.  
+
+The other proposal would be modify the base unit of bitcoin to be 10^8 units for each existing satoshit.  For each unit in the old chain, new coins are available in the new chain to the tune of 10^8 multipled by a coin-count comparison between the old and the new chains.  It is explained in more detail below.
 
 
 # Mining rewards and coin supply
@@ -66,7 +73,7 @@ New chain nodes should have read and write capability for peers that continue to
 
 # Miscellaneous
 
-The other thing that could be done would be to increase the decimal count in the new chain. As Luke Dashjr was kind enough to explain to me once, it is actually the satoshi that is the base level of bitcoin. The bitcoin determination of eight decimal places is arbitrary. But with the new chain, it would be possible to nominate the arbitrary count as 16 decimal places, and the transfer of value from the old chain could be redeemed in the new chain as (10^8) satoshis.  This provides an even greater granularity than is currently possible.  Given enough thought on any new mining algorithm, this could have quite positive ramifications with regard to scalability.  But that is not the scope of this proposal.
+The other thing that should be done, to cater for the coin transferrance multiplication factors, would be to increase the decimal count in the new chain. As Luke Dashjr was kind enough to explain to me once, it is actually the satoshi that is the base level of bitcoin. The bitcoin determination of eight decimal places is arbitrary. But with the new chain, it would be possible to nominate the arbitrary count as 16 decimal places, and the transfer of value from the old chain could be redeemed in the new chain as (10^8) satoshis.  This provides an even greater granularity than is currently possible.  Given enough thought on any new mining algorithm, this could have other positive ramifications with regard to scalability.  But that is not the scope of this proposal.
 
 
 # Discussion
