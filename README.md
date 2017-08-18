@@ -41,7 +41,7 @@ A consensus rule change hard-fork (the new chain) is created and populated with 
 
 The transaction to migrate to the new chain is the transaction output of the old chain proving that the coins have been  permanently locked.  It is placed into the transaction pool of the nodes of the new chain.  As the transaction pool increases with more transactions, the value behind that increases, incentivizing mining activity on the new chain.
 
-The proposal is to modify the base unit of bitcoin to be 10^8 units for each existing satoshit.  For each unit in the old chain, new coins are available in the new chain to the tune of 10^8 multipled by a coin-count comparison between the old and the new chains.  It is explained in more detail the mining rewards and coin supply section.
+The proposal is to modify the base unit of bitcoin to be 10^8 units for each existing satoshi.  For each unit in the old chain, new coins are available in the new chain to the tune of 10^8 multipled by a coin-count comparison between the old and the new chains.  It is explained in more detail the mining rewards and coin supply section.
 
 There should be some investigation about a provably cryptographic method of transferring value between the old chain and the new chain such that the address-space in the new chain is unlinked with the old chain.
 
