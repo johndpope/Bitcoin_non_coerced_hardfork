@@ -69,6 +69,7 @@ The proposal is to have block rewards calculated as a function of the percentage
 The other schedule to introduce is the transfer value between the chains.  Because the old chain is still going up in rewards at the bitcoin release schedule, the migration amount of coins received for each transaction should be a reflection of the difference between the coin release schedules.  As more coins are available in the old chain by design, the ratio of coins redeemed in the new chain should be lower.  This can be done by multiplying the coins to be migrated by the ratio of the total number of coins in the new chain and the number of coins in the old chain. 
 
   Example :
+  
     100 coins to transfer * (17M in the new chain / 20M in the old chain) = 85 coins in the new chain.
     
 The first block of coins being migrated will have the value returned to the holder in the new chain at 100% of the coin count of the coins for migration, because no block in the new chain has been created, and the block counts align.  Any remaining 'dust' shall be discarded at the lowest granularity of the new chain.
