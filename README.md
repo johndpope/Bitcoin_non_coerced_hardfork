@@ -27,7 +27,7 @@ There are many users in bitcoin that continue to use very old node reference cli
 Added onto that is the issue of mining infrastructure.  Whether miners are malicious or not, it has to be recognized that any attempt to change the mining hashing algorithm will be met with great resistance, and deservedly so.  Even if a change of this nature was arguably justifiable as a result of a 51% attack by a large miner or group of miners, the non-attacking miners will be negatively affected in the same way as the attacking mining interest is.  This is a long-term untenable position for both miners, and for the maintainers of the consensus rules.  It should also be recognized the amount of resources that have been invested in the integral part of bitcoin security that is mining.  They must be protected from disenfranchisement as well.
 
 
-# The Proposal : Dual-Locked chains.
+# The Proposal : Dual-Locked chains with aligned incentives.
 
 In a discussion on reddit with jonny1000 about the feasibilty of implementing a dual-locking chain mechanism, it would seem to be broadly possible.  The proposal is this :
 
