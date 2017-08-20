@@ -20,9 +20,9 @@ If I'm completely mistaken, I'll be the first to admit it, and I have broad shou
 
 # What is Coercion in the context of bitcoin?
 
-Coercion in the NCHF relates to the requirement of a node owner to upgrade their node client to a version that recognizes a consensus rule change. If node owner is forced to upgrade their node client in order to continue using bitcoin, they are being coerced to do so.
+Coercion in the NCHF relates to the requirement of a node owner to upgrade their node client to a version that recognizes a consensus rule change. If a node owner is forced to upgrade their node client in order to continue using bitcoin, they are being coerced to do so.
 
-The premise of a hard-fork is that it has broad consensus, having a feature-set that is desirable, or it will not be proposed in the first place. The NCHF proposal makes no comment on the specifics of the hard-fork architecture of the new chain. The proposal demonstrates that even after the hard-fork, bitcoin may still be safely used without leading to a chain-split that requires a node owner to change their node client software. It is this lack of a requirement of users to change their node client that defines the lack of coercion. It makes no comment on whether the feature-set of the new chain or the old chain is more desirable. Having a more desirable feature-set is not to be confused with coercion to use that feature-set.
+The premise of a hard-fork is that it has broad consensus, having a feature-set that is desirable, or it will not be proposed in the first place. The NCHF proposal makes no comment on the specifics of the hard-fork architecture or feature-set desirability of the new chain. The proposal demonstrates that even after the hard-fork, bitcoin may still be safely used without leading to a chain-split that requires a node owner to change their node client software. It is this lack of a requirement of users to change their node client that defines the lack of coercion. It makes no comment on whether the feature-set of the new chain or the old chain is more desirable. Having a more desirable feature-set is not to be confused with coercion to use that feature-set.
 
 
 # The Issues
