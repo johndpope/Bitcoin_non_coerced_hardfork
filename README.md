@@ -45,7 +45,7 @@ The proposal is to modify the base unit of bitcoin to be 10^8 units for each exi
 
 Migration of value between chains shall be implemented such that the address space in the new chain is not linked to the address space in the old chain.  Because the act of migration to the new chain involves the output of a transaction on the old chain, that transaction is initiated on the new chain can happen at any time in the future.  It should therefore be possible to completely unlink the address space on the old chain with the new chain while at the same time ensure only coins that have been locked in the old chain are available for new chain transactions.  There are many proposals for confidential transactions that could be implemented in the new chain that would further this aim, but that is not the scope of this proposal.
 
-The three model pictures demonstrate the propogation of nodes in the new chain through the network.  consensus-Model1, 2, and 3, as pdf and image.  Not how the 'available value' in the old chain gradually reduces as it is migrated to the new chain.
+The three model pictures demonstrate the propogation of nodes in the new chain through the network.  consensus-Model1, 2, and 3, as pdf and image.  Note how the 'available value' in the old chain gradually reduces as it is migrated to the new chain.
 
 
 
