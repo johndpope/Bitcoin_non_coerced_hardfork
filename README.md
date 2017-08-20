@@ -1,7 +1,5 @@
 
-
-
-This is a work in progress, spelling errors, grammar and all that.  
+This is a work in progress, spelling errors, grammar and all that.  If I'm completely mistaken, I'll be the first to admit it, and I have broad shoulders, so have at it!
 
 
 
@@ -15,7 +13,6 @@ Of paramount importance is the protection of existing node owners from the loss 
 
 I'd like to start a dialogue on how a non-coerced hard-fork (NCHF) might be achieved, with a suggestion on how it might be implemented without forcing existing bitcoin users to migrate to a different set of consensus rules, but still allow node users that are interested in expanding the protocol to meet new use-cases, to safely do so.  Following is what I think might be the beginning of a framework that might allow bitcoin to be migrated to a different set of consensus rules, like the adoption of an alternate hashing algorithm, without disenfranchising any of the existing bitcoin users. I would also suggest that the proposed solution may be a way to incrementally implement mining algorithm changes that don't needlessly punish miners for the perception of a risk of centralization.
 
-If I'm completely mistaken, I'll be the first to admit it, and I have broad shoulders, so have at it!
 
 
 # What is Coercion in the context of bitcoin?
