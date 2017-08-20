@@ -54,6 +54,7 @@ Migration of value between chains shall be implemented such that the address spa
 
 The three model pictures demonstrate the propogation of nodes in the new chain through the network.  consensus-Model1, 2, and 3, as pdf and image.  Note how the 'available value' in the old chain gradually reduces as it is migrated to the new chain.
 
+While the NCHF has many similarities to side-chains, it differs in a number of key areas.  First, transactions are one way.  They may only be migrated from the old chain to the new chain.  Two, it specifically aligns in its mining reward schedule in the new chain, and its value migration schedule from old chain to new chain, so that the the values of the old and new chains should broadly align.  A side-chain may have a completely arbitrary mining solution that devalues (or provides no mining rewards at all) the coins in relation to the old chain.  The NCHF proposal specifically aligns the release schedules to reflect the value that has been already transferred to the new chain.
 
 
 # Mining rewards and coin supply
@@ -102,6 +103,8 @@ It must be studied what possible price effect might be generated on the new chai
 The mining algorithm might effect how blockchains are tied?
 
 Given the the greater granularity in the new chain, it might be possible to use the increased transaction address space to develop an algorithm that will be able to use the deterministic public and private key allocation to store encrypted information in the deterministic space.
+
+It would be broadly possible to disconnect the actual coin count in the new chain such that they always aligned with the coin count in the old chain.  This could conceivably incentivize migration to the new chain, because as the coin mining reward schedule between the old chain and the new chain will always be greater in the old chain, the ratio between old chain and new chain will always be positive.  In effect, this would provide a deflationary effect on the new chain such that the value of coins migrated to the new chain increase in value at a greater rate than the coins in the old chain, and this effect will increase the longer the time the coins are in the new chain.
 
 
 # Conclusion
