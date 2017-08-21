@@ -53,6 +53,19 @@ Migration of value between chains shall be implemented such that the address spa
 
 The three model pictures demonstrate the propogation of nodes in the new chain through the network.  consensus-Model1, 2, and 3, as pdf and image.  Note how the 'available value' in the old chain gradually reduces as it is migrated to the new chain.
 
+ <table style="width:100%">
+  <tr>
+    <th>Stage 1</th>
+    <th>Stage 2</th>
+    <th>Stage 3</th>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/Frogolocalypse/Bitcoin_non_coerced_hardfork/master/consensus-Model1.PNG" height="420" width="265"></td>
+    <td><img src="https://raw.githubusercontent.com/Frogolocalypse/Bitcoin_non_coerced_hardfork/master/consensus-Model2.PNG" height="420" width="265"></td>
+    <td><img src="https://raw.githubusercontent.com/Frogolocalypse/Bitcoin_non_coerced_hardfork/master/consensus-Model3.PNG" height="420" width="265"></td>
+  </tr>
+</table> 
+
 While the NCHF has many similarities to side-chains, it differs in a number of key areas.  First, transactions are one way.  They may only be migrated from the old chain to the new chain.  Two, it specifically aligns in its mining reward schedule in the new chain, and its value migration schedule from old chain to new chain, so that the the values of the old and new chains should broadly align.  A side-chain may have a completely arbitrary mining solution that devalues (or provides no mining rewards at all) the coins in relation to the old chain.  The NCHF proposal specifically aligns the release schedules to reflect the value that has been already transferred to the new chain.
 
 
