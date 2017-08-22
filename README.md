@@ -101,6 +101,7 @@ The memory pool for each chains would be maintained with by the new nodes, but o
 New chain nodes should have read and write capability for peers that continue to want to transact on old chain consensus rules. Transactions should be coded to be backwards compatible with any existing format, and yet extend the functionality to cater for new chain requirements.  The transaction and integration of the node client should allow for the integration of both transaction formats, enabling the user to migrate to the new chain if signed appropriately.  It should also allow for the user to use entirely old node infrastructure without ever being exposed to the new chain, while ensuring that there isn't any rapid decrease in security by either abandoning existing mining infrastructure, nor existing mining infrastructure abandoning them. 
 
 Node users shall still be able to choose which node client they run.  It should be possible to run as only an old chain node, as a new chain node, or as both an old and new chain node.  
+
 Old chain nodes would have :
 
   1. The old chain blockchain.
