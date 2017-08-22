@@ -120,7 +120,7 @@ New and old chain nodes would have :
   2. The new chain blockchain.
   3. The new chain UTXO.
 
-Because the output to the new chain requires a block depth on the old chain, new chain nodes will not require the UTXO of the old chain in order to create migration transactions.  The process of committing to the migration will have already passed through the UTXO of the old chain, and be recorded on the old chain blockchain.  Once a migration transaction on the new chain is included in the new chain UTXO, it is a valid transaction by querying the signature the user has signed the transaction with, and a query on the old chain blockchain detailing that the funds have been migrated. 
+Because a migration transaction to the new chain requires a block depth on the old chain, new chain nodes will not require the UTXO of the old chain in order to validate migration transactions.  The process of committing to the migration will have already passed through the UTXO of the old chain, and be recorded on the old chain blockchain.  Once a migration transaction on the new chain is included in the new chain UTXO, it is a valid transaction by querying the signature the user has signed the transaction with, and a query on the old chain blockchain detailing that the funds have been migrated. 
 
 
 # Miscellaneous
