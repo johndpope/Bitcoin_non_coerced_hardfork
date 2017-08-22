@@ -100,7 +100,26 @@ The memory pool for each chains would be maintained with by the new nodes, but o
 
 New chain nodes should have read and write capability for peers that continue to want to transact on old chain consensus rules. Transactions should be coded to be backwards compatible with any existing format, and yet extend the functionality to cater for new chain requirements.  The transaction and integration of the node client should allow for the integration of both transaction formats, enabling the user to migrate to the new chain if signed appropriately.  It should also allow for the user to use entirely old node infrastructure without ever being exposed to the new chain, while ensuring that there isn't any rapid decrease in security by either abandoning existing mining infrastructure, nor existing mining infrastructure abandoning them. 
 
-Users should still be able to choose which node client they run.  It should be possible to only run a node as an old chain node, or a new chain node.  The only restriction would be that migration transactions could not be validated on nodes that don't have the functionality of both node types.  But for users that only ever want to transact on one chain, they will not require validating any blocks or transactions that they will never have any interest in.
+Node users shall still be able to choose which node client they run.  It should be possible to run as only an old chain node, as a new chain node, or as both an old and new chain node.  
+Old chain nodes would have :
+
+  1. The old chain blockchain.
+  2. The old chain UTXO.
+
+New chain nodes would have :
+
+  1. The old chain blockchain.
+  2. The new chain blockchain.
+  3. The new chain UTXO.
+  
+New and old chain nodes would have :
+
+  1. The old chain blockchain.
+  2. The old chain UTXO.
+  2. The new chain blockchain.
+  3. The new chain UTXO.
+
+Because the output to the new chain requires a block depth on the old chain, new chain nodes will not require the UTXO of the old chain in order to create migration transactions.  The process of committing to the migration will have already passed through the UTXO of the old chain, and be recorded on the old chain blockchain.  Once a migration transaction on the new chain is included in the new chain UTXO, it is a valid transaction by querying the signature the user has signed the transaction with, and a query on the old chain blockchain detailing that the funds have been migrated. 
 
 
 # Miscellaneous
