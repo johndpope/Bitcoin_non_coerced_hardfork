@@ -77,7 +77,7 @@ The proposal is to have block rewards calculated as a function of the percentage
 
   Example :
   
-    12.5 old chain block reward * 1.567% = 1.9875 btc reward.
+    12.5 old chain block reward * 15.67% = 1.9875 btc reward.
 
 The other schedule to introduce is the transfer value between the chains.  Because the old chain is still going up in rewards at the bitcoin release schedule, the migration amount of coins received for each transaction should be a reflection of the difference between the coin release schedules.  As more coins are available in the old chain by design, the ratio of coins redeemed in the new chain should be lower.  This can be done by multiplying the coins to be migrated by the ratio of the total number of coins in the new chain and the number of coins in the old chain. 
 
