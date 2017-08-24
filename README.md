@@ -1,6 +1,14 @@
 
 This is a work in progress, spelling errors, grammar and all that.  If I'm completely mistaken, I'll be the first to admit it, and I have broad shoulders, so have at it!
 
+# What if .... ?
+
+Bitcoin is an adversarial system, and being risks, they can only be minimised, they can never be removed.  All risks should be identified, but for some risks, there is no possibility of them being removed, only minimised as much as possible.  Some risks eventuate through the development of new tools that undermine existing systems, some will be eventuate through the applicaiton of regulatory pressure, and some will eventuate through the application of political or social pressure.  Or just plain good ol' fashioned stupidity.  There is no way to know.
+
+The biggest risk that that bitcoin faces is the risk of a contentious chain split.  For any reason above, or any not listed, the risk that a hard-fork 'upgrade' to the bitcoin network will split the chain is larger than non-zero.  Depending on who is asked, that number could be so large that any proposed change to the network architecture will be rejected only after a significant amount of the economic ecosystem of bitcoin has already migrated to the new system.  To not recognize this risk, or to think that the overwhelming desirability for any feature-set of a forked chain is so great that it will be adopted simply because of the feature-set offered, is, in my opinion, negligent in the extreme.  
+
+The following proposal is developed on the pretense that there will always be contention of such a level for a bitcoin chain-split, or a PoW change, and that any solution must be developed on acceptance of this reality.
+
 
 
 # A proposal for a bitcoin non-coerced hard-fork (NCHF)
