@@ -1,5 +1,5 @@
 
-2017.11.15  You know what?  I don't like it.  I reckon there's a better way to do this.  Working through it now, but will leave it here for now.
+2017.11.15  You know what?  I don't like it.  I reckon there's a better way to do this.  Working through an alternate process, but will leave it here for now.
 
 
 
