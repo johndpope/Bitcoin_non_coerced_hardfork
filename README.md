@@ -1,4 +1,8 @@
 
+2017.11.15  You know what?  I don't like it.  I reckon there's a better way to do this.
+
+
+
 This is a work in progress, spelling errors, grammar and all that.  If I'm completely mistaken, I'll be the first to admit it, and I have broad shoulders, so have at it!
 
 # What if .... ?
